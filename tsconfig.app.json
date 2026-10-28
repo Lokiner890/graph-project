@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // TypeScript only type-checks (noEmit), Vite compiles. target/lib set which syntax and built-in
+    // APIs can be used, they follow Vite's default build target (Chrome 111, Firefox 114, Safari 16.4).
+    // DOM includes DOM.Iterable since TypeScript 6.
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "types": ["vite/client", "vitest/globals"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    // default since TypeScript 6, kept explicit
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    // default since TypeScript 6, kept explicit
+    "noUncheckedSideEffectImports": true,
+
+    /* Paths */
+    // relative to this file, `baseUrl` is not needed (deprecated in TypeScript 6)
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}

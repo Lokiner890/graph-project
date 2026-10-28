@@ -1,0 +1,29 @@
+{
+  // type-checks vite.config.ts, it runs in Node (not in the browser bundle)
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    // Node 24 (.nvmrc) supports ES2023
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    // Node globals and modules (process, node:path, import.meta.dirname) for the config
+    "types": ["node"],
+    "skipLibCheck": true,
+
+    /* Node mode */
+    // Node's module rules, moduleResolution follows `module`
+    "module": "nodenext",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["vite.config.ts"]
+}
